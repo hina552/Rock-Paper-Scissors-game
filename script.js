@@ -1,5 +1,3 @@
-let humanScore = 0;
-let computerScore = 0;
 function getComputerChoice(){
 let luck = Math.floor(Math.random()* 10);
 if(luck >= 0 && luck <= 3){
@@ -16,6 +14,9 @@ if(choice === "paper" || choice === "rock" || choice === "scissors"){
 return choice;}
 return "error";
 }
+function playGame(){
+let humanScore = 0;
+let computerScore = 0;
 function playRound(humanChoice, computerChoice){
 if(humanChoice === "scissors" && computerChoice === "rock"){
 console.log("you lost rock beats scissors!");
@@ -37,5 +38,11 @@ console.log("you won! rock beats scissors!");
 humanScore++;}
 else{
 console.log("try again!")}};
+for(let i = 1; i <= 5; i++){
 playRound(getHumanChoice(), getComputerChoice());
-console.log("your score is: " + humanScore + " and the computerScore is " + computerScore);
+}
+if(humanScore > computerScore){
+console.log("you won!" + " your score is: " + humanScore)}
+else{
+console.log("you lost!" + " your score is: " + humanScore)}};
+playGame();
