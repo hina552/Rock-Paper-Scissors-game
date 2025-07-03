@@ -8,4 +8,9 @@ else if(luck > 6 && luck <= 9 ){
 return "scissors";}
 return "error";
 }
-getComputerChoice();
+function getHumanChoice(){
+let choice = prompt("pick something").toLowerCase();
+if(choice === "paper" || choice === "rock" || choice === "scissors"){
+return choice;}
+return "error";
+}
